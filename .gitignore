@@ -1,0 +1,30 @@
+# --- secrets: NEVER commit ---
+.env
+*.key
+*.pem
+
+# --- python / os cruft ---
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+.DS_Store
+
+# --- bulky RAW model outputs (regenerable via the code; too large for git) ---
+# The full 12-node recursion output, ~650 MB. Regenerate with run_nodes.py.
+runs/
+# batch-submission scratch + deterministically-regenerable prompt files
+paraphrased_papers/batch_*_input.jsonl
+run_paraphrased/**/prompts/
+runs/**/prompts/
+*_job.json
+
+# Tracked on purpose (do NOT ignore): all code, seed.jsonl, kv_pairs.jsonl,
+# buckets/, figures/, results/, selections/, selections_paraphrased/,
+# paraphrased_papers/*.jsonl, run_paraphrased/ (node-0 generations, ~68 MB).
+
+# --- python build artifacts ---
+*.egg-info/
+build/
+dist/

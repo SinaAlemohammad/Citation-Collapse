@@ -1,0 +1,1 @@
+"""Citation-Collapse package."""

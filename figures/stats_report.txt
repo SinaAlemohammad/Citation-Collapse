@@ -1,0 +1,57 @@
+== Round 0: concentration and exclusion (Fig. 1, Table 2) ==
+  Claude Haiku 4.5       top10  23.3%  HHI 0.0120  excl   2  hall 0.36%
+  Claude Opus 4.8        top10  27.1%  HHI 0.0143  excl  11  hall 0.09%
+  Claude Sonnet 4.6      top10  28.3%  HHI 0.0156  excl  20  hall 0.00%
+  Gemini 2.5 Flash       top10  27.5%  HHI 0.0141  excl   7  hall 0.08%
+  Gemini 2.5 Pro         top10  30.2%  HHI 0.0146  excl  15  hall 0.00%
+  Gemini 3.1 Flash-Lite  top10  25.4%  HHI 0.0124  excl   3  hall 0.34%
+  Gemini 3.1 Pro         top10  28.8%  HHI 0.0157  excl  18  hall 0.00%
+  GPT-4.1                top10  25.2%  HHI 0.0129  excl   4  hall 0.00%
+  GPT-4.1 mini           top10  24.3%  HHI 0.0127  excl   5  hall 1.12%
+  GPT-5                  top10  27.8%  HHI 0.0154  excl  19  hall 0.00%
+  GPT-5 mini             top10  28.5%  HHI 0.0157  excl  15  hall 0.22%
+  null: top10 15.6%  excl 0.0
+
+== One map (Sec. 3.2, Fig. 2) ==
+  mean disattenuated correlation 0.71   PC1 73%
+  within-vendor 0.77/0.79/0.83   cross-vendor 0.70/0.70/0.63
+  plurality: floor 73%  removable 27%  (avg single excess overlap 0.498)
+
+== Votes (App. C.3, Fig. 3b) ==
+  TV(shared map) 0.11   TV(independent) 0.43
+
+== Exchangeability (Prop. 3, Fig. 3a) ==
+  model violation probabilities: 6e-06 (least) .. 2e-72 (most)
+
+== rho / stable rank / identity (Prop. 4, App. D) ==
+  rho range 0.86..0.97   stable rank ~1
+
+== Humans (Sec. 3.1, App. E) ==
+  All 8 experts    top10 18.9% (null 18.7%)  excl 2  chi2 130.7 (df 119, p 0.22)
+  Principal (A2)   top10 19.6% (null 19.9%)  excl 5  chi2 125.9 (df 119, p 0.31)
+  Without A2       top10 31.4% (null 29.9%)  excl 44  chi2 125.8 (df 115, p 0.23)
+  human map vs consensus map: r = 0.19
+
+== Text model (Sec. 3.3, App. F) ==
+  out-of-sample r = 0.50  (TF-IDF 1-2grams, min_df 3, ridge a=1, 10-fold)
+
+== Recursion (Sec. 4, Fig. 5) ==
+  Gemini 2.5 Flash       top10@11 34.6% (null 29.3%)  seed rate 78% (null 33%)  seed excess +45pp  gen-only excess +4.8pp
+  Gemini 2.5 Pro         top10@11 34.7% (null 29.4%)  seed rate 54% (null 33%)  seed excess +21pp  gen-only excess +6.0pp
+  Gemini 3.1 Flash-Lite  top10@11 31.8% (null 29.2%)  seed rate 65% (null 32%)  seed excess +32pp  gen-only excess +2.1pp
+  Gemini 3.1 Pro         top10@11 35.3% (null 29.5%)  seed rate 92% (null 33%)  seed excess +59pp  gen-only excess +4.5pp
+  GPT-4.1                top10@11 34.7% (null 29.5%)  seed rate 43% (null 32%)  seed excess +11pp  gen-only excess +4.8pp
+  GPT-4.1 mini           top10@11 31.1% (null 29.3%)  seed rate 26% (null 33%)  seed excess -7pp  gen-only excess +1.7pp
+  GPT-5                  top10@11 40.3% (null 29.6%)  seed rate 85% (null 33%)  seed excess +52pp  gen-only excess +11.0pp
+  GPT-5 mini             top10@11 37.8% (null 29.8%)  seed rate 65% (null 31%)  seed excess +34pp  gen-only excess +7.9pp
+
+== Within-panel competition test (Prop. 6, Fig. 6, App. G) ==
+  Gemini 2.5 Flash       beta -1.06 (se 0.25, t -4.3)  beta_gen -0.99  placebo +0.01
+  Gemini 2.5 Pro         beta -0.31 (se 0.23, t -1.3)  beta_gen -0.11  placebo -0.00
+  Gemini 3.1 Flash-Lite  beta -1.74 (se 0.20, t -8.6)  beta_gen -0.51  placebo +0.01
+  Gemini 3.1 Pro         beta -3.12 (se 0.29, t -11.0)  beta_gen -0.92  placebo -0.00
+  GPT-4.1                beta -0.95 (se 0.25, t -3.7)  beta_gen +0.37  placebo +0.05
+  GPT-4.1 mini           beta -0.35 (se 0.23, t -1.5)  beta_gen +0.46  placebo +0.02
+  GPT-5                  beta -2.60 (se 0.22, t -12.0)  beta_gen -0.59  placebo -0.02
+  GPT-5 mini             beta -1.82 (se 0.22, t -8.4)  beta_gen -0.10  placebo +0.14
+  rows 7557, clusters 1292 per model

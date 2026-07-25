@@ -1,0 +1,13 @@
+# Core (generate / paraphrase — needs API keys)
+openai>=1.40
+anthropic>=0.34
+google-genai>=0.3
+faker>=24
+python-dotenv>=1.0
+# Analysis, figures (no keys)
+numpy>=1.24
+matplotlib>=3.7
+# Metrics scripts + figure package
+scipy>=1.10
+pandas>=2.0
+scikit-learn>=1.3
